@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR" ng-app="blog"></html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consumo da Api</title>
+    <link
+    href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"
+    rel="stylesheet">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script type="text/javascript" src="assets/js/publica.js"></script>
+</head>
+
+<body>
+  <header class="">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <h2>Blog do Luis</h2>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">Sobre nós</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Fale conosco</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+<div class="album py-5 bg-light">
+    <div class="container">
+     <div class="row" ng-controller="Rest">
+          <div class="card mb-4 shadow-sm" style="width: 30vw; height: 30vw;">
+            <img ng-src="https://api-fake-blog.herokuapp.com{{ publicacao.thumbImage }}" >
+            <div class="card-body">
+              <p class="card-text">{{ publicacao.title }}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <small class="text-muted">{{ publicacao.description }}</small>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+</body>
+</html>

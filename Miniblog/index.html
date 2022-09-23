@@ -1,16 +1,22 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" ng-app="blog">
+
+</html>
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="Luis" content="">
   <link
-  href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
+    href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"
+    rel="stylesheet">
   <title>Blog do Luís</title>
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/index.css">
   <link rel="stylesheet" href="assets/css/owl.css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+  <script type="text/javascript" src="/assets/js/app.js"></script>
 </head>
 
 <body>
@@ -180,15 +186,40 @@
             <div class="post-options">
               <div class="row">
               </div>
-              <a href="pai.html">saiba mais</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+    <section class="jumbotron text-center">
+      <div class="container">
+        <h1>Principais Noticias</h1>
+        <p class="lead text-muted"></p>
+      </div>
+    </section>
+
+    <div class="album py-5 bg-light">
+      <div class="container">
+       <div class="row" ng-controller="Rest">
+          <div class="col-md-4" ng-repeat="(key, publicacao) in publicacoes">
+            <div class="card mb-4 shadow-sm">
+              <img ng-src="https://api-fake-blog.herokuapp.com{{ publicacao.thumbImage }}" >
+              <div class="card-body">
+                <p class="card-text">{{ publicacao.title }}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <small class="text-muted">{{ publicacao.description }}</small>
+                </div>
+                <a href="pub.html#/{{ key }}"><p style="color: black;">Saiba mais:</p></a>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-  </section>
-  
+
   <footer>
     <div class="container">
       <div class="row">
@@ -204,12 +235,13 @@
           </div>
         </div>
       </div>
+
     </div>
+
   </footer>
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="assets/js/custom.js"></script>
   <script src="assets/js/owl.js"></script>
-
 </body>
 
 </html>
